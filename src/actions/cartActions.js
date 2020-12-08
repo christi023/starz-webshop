@@ -1,16 +1,24 @@
 import {
-  CART_ADD_ITEM,
-  CART_REMOVE_ITEM,
+  GET_ITEMS,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
   CART_INCREASE_ITEM,
   CART_DECREASE_ITEM,
   CART_TOTAL_ITEMS,
   CART_DETAILS,
 } from '../constants/cartConstants';
 
+// for getting the initial showing items
+export const getItems = () => {
+  return {
+    type: GET_ITEMS,
+  };
+};
+
 // adding to cart
 export const addToCart = (id) => (dispatch, getState) => {
   dispatch({
-    type: CART_ADD_ITEM,
+    type: ADD_TO_CART,
     payload: id,
   });
 
@@ -20,7 +28,7 @@ export const addToCart = (id) => (dispatch, getState) => {
 // removing from cart
 export const removeFromCart = (id) => (dispatch, getState) => {
   dispatch({
-    type: CART_REMOVE_ITEM,
+    type: REMOVE_FROM_CART,
     payload: id,
   });
 
