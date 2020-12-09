@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './Components/Header';
 import Home from './Components/Home/Home';
 import About from './Components/About';
-import Product from './Components/Product/Product';
+import Products from './Components/Products/Products';
+import Cart from './Components/Cart/Cart';
 import Footer from './Components/Footer';
 
 import './App.css';
@@ -17,10 +18,10 @@ function App() {
       <main className="py-3">
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/products" component={Products} />
+          <Route path="/product/:id" component={Products} />
+          <Route exact path="/cart" component={Cart} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/product/:id" component={Product} />
-
-          <Route path="/cart/:id?" />
         </Switch>
       </main>
       <Footer />
