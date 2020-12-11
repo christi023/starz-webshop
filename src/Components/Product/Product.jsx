@@ -1,27 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
 
-const Product = ({ product }) => {
+export default function Product(props) {
+  const { product, addToCart, isInCart } = props;
+
   return (
-    <Card className="my-3 p-3 rounded">
-      <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.img} variant="top" />
-      </Link>
-
-      <Card.Body>
-        <Link to={`/product/${product._id}`}>
-          <Card.Title as="div">
-            <strong>{product.title}</strong>
-          </Card.Title>
+    <div className="product">
+      <div className="box-img">
+        <Link to={`/product/someID}`}>
+          <img src={product.img} alt="" />
         </Link>
+      </div>
+      <div className="product-info">
+        <h3>{product.title}</h3>
+        <h4>${product.price}</h4>
+      </div>
 
-        <Card.Text as="div">{product.details}</Card.Text>
-
-        <Card.Text as="h3">${product.price}</Card.Text>
-      </Card.Body>
-    </Card>
+      <div className="product-btn">
+        <Link to={`/product/someID`}>
+          <button>View Item</button>
+        </Link>
+        <button onClick={addToCart}>Add to cart</button>
+      </div>
+      <div className={isInCart ? 'inCart newInCart' : 'inCart '}>
+        <span>Already in cart</span>
+      </div>
+    </div>
   );
-};
-
-export default Product;
+}
