@@ -1,6 +1,4 @@
 import React from 'react';
-//import { useDispatch } from 'react-redux';
-//import { Row, Col } from 'react-bootstrap';
 import HomeImg from '../../assets/shoe3.jpg';
 // component
 import Products from '../Products/Products';
