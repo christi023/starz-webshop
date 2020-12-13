@@ -2,8 +2,12 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 // Import Thunk
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+// reducer
+import { itemReducer } from './reducers/itemReducer';
 
-const reducer = combineReducers({});
+const reducer = combineReducers({
+  item: itemReducer,
+});
 
 // get cart items
 const initialState = {};
