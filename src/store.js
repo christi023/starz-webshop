@@ -10,6 +10,7 @@ const reducer = combineReducers({
 });
 
 // get cart items
+// get cart items
 const initialState = {};
 
 const middleware = [thunk];
